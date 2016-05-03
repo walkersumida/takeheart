@@ -69,6 +69,6 @@ class MaximsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def maxim_params
-      params.require(:maxim).permit(:word, :author, :img_path)
+      params.require(:maxim).permit(:word, :author, :uploading_file)
     end
 end
