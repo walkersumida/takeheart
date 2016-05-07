@@ -30,7 +30,7 @@ class Maxim < ActiveRecord::Base
 
   def upload_file
     upload_path = get_upload_path
-    mkdir_upload_path IMAGES_DIR
+    mkdir_upload_path "#{UPLOAD_FILE_DIR}/#{IMAGES_DIR}"
 
     file_name = SecureRandom.uuid << File.extname(self.uploading_file.original_filename)
     full_path = upload_path << file_name
@@ -46,7 +46,7 @@ class Maxim < ActiveRecord::Base
   end
 
   def get_upload_path
-    "#{Rails.root.join(IMAGES_DIR).to_s}/"
+    "#{Rails.root.join("#{UPLOAD_FILE_DIR}/#{IMAGES_DIR}").to_s}/"
   end
 
   def mkdir_upload_path upload_path
