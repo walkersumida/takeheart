@@ -49,5 +49,5 @@ test:
 production:
   <<: *default
   database: takeheart_production
-  username: takeheart
+  username: <%= ENV['TAKEHEART_DATABASE_USER'] %>
   password: <%= ENV['TAKEHEART_DATABASE_PASSWORD'] %>
