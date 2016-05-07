@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: black;
+}
+
+.h-img {
+    border: solid 1px #ffffff;
+}
+
+.word {
+    margin: 1px;
+    line-height: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    color:#ffffff;
+}
+.author {
+    font-size: 80%;
+    font-weight:lighter;
+    font-style: italic;
+    font-family: "Times New Roman";
+}
