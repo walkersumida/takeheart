@@ -29,6 +29,8 @@ gem 'unicorn', group: :production
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # static code analyzer
+  gem 'rubocop', '~> 0.36.0', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
