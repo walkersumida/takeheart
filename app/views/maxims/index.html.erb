@@ -1,16 +1,18 @@
 <div class="row">
   <% @maxims.each do |maxim| %>
-      <div class="col s12 m10 offset-m1 l10 offset-l1">
-        <div class="card z-depth-3">
-          <div class="card-image">
+    <div class="col s12 m10 offset-m1 l10 offset-l1">
+      <div class="card z-depth-3">
+        <div class="card-image">
+          <%= link_to maxim_path(maxim) do %>
             <%= output_img maxim.img_path, {style: 'width: 100%', class: 'h-img'} %>
             <span class="card-title word">
               <%= maxim.word %>
               <span class="author">by <%= maxim.author %></span>
             </span>
-          </div>
+          <% end %>
         </div>
       </div>
+    </div>
   <% end %>
 </div>
 <div class="row">
