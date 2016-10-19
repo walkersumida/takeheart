@@ -9,7 +9,7 @@ class Maxim < ActiveRecord::Base
             presence: true,
             length: {maximum: 50}
   validates :uploading_file,
-            presence: true
+            presence: true, on: :create
 
   before_create :upload_file
 
