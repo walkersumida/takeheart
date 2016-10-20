@@ -4,9 +4,9 @@
       <h2><%= pluralize(@maxim.errors.count, "error") %> prohibited this maxim from being saved:</h2>
 
       <ul>
-      <% @maxim.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @maxim.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -22,6 +22,13 @@
   <div class="field">
     <%= f.label :uploading_file %><br>
     <%= f.file_field :uploading_file %>
+  </div>
+  <div class="field">
+    <div class="card z-depth-3">
+      <div class="card-image">
+        <%= output_img @maxim.img_path, {style: 'width: 100%', class: 'h-img'} %>
+      </div>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit %>
