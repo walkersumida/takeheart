@@ -12,7 +12,7 @@
 
 <p>
   <strong>Img path:</strong>
-  <%= @maxim.img_path %>
+  <%= output_img @maxim.img_path, {style: 'width: 100%', class: 'h-img'} %>
 </p>
 
 <%= link_to 'Edit', edit_maxim_path(@maxim) %> |
