@@ -11,7 +11,8 @@ class Maxim < ActiveRecord::Base
   validates :uploading_file,
             presence: true, on: :create
 
-  before_create :upload_file
+  before_create :create_image_file
+  before_update :update_image_file
 
   def upload_file_ext white_list
     white_list.each do |ext|
@@ -26,6 +27,18 @@ class Maxim < ActiveRecord::Base
 
   def exists_file?
     !self.uploading_file.blank?
+  end
+
+  def create_image_file
+    upload_file
+  end
+
+  def update_image_file
+    delete_img_path = "#{get_upload_path}#{self.img_path}"
+    upload_file
+    File.delete(delete_img_path)
+  rescue
+    raise
   end
 
   def upload_file
