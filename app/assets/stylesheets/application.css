@@ -21,6 +21,13 @@ body {
     border: solid 1px #ffffff;
 }
 
+.display-img {
+    object-fit: contain;
+    background-color: #000000;
+    width: auto;
+    max-height: 600px;
+}
+
 .word {
     width: 100%;
     line-height: 25px;
