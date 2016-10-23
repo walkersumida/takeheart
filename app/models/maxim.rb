@@ -12,7 +12,7 @@ class Maxim < ActiveRecord::Base
             presence: true, on: :create
 
   before_create :create_image_file
-  before_update :update_image_file
+  before_update :update_image_file, if: :exists_file?
   before_destroy :destroy_image_file
 
   def upload_file_ext white_list
