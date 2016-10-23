@@ -22,7 +22,7 @@ body {
 }
 
 .word {
-    margin: 1px;
+    width: 100%;
     line-height: 25px;
     background: rgba(0, 0, 0, 0.3);
     color:#ffffff;
