@@ -4,7 +4,7 @@ class MaximsController < ApplicationController
   # GET /maxims
   # GET /maxims.json
   def index
-    @maxims = Maxim.all
+    @maxims = Maxim.page(params[:page])
   end
 
   # GET /maxims/1
