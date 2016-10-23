@@ -4,6 +4,7 @@
 
     <%= render 'form' %>
 
+    <%= link_to 'Destroy', @maxim, method: :delete, data: { confirm: 'Are you sure?' } %> |
     <%= link_to 'Show', @maxim %> |
     <%= link_to 'Back', maxims_path %>
   </div>

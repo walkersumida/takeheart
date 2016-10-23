@@ -13,6 +13,7 @@ class Maxim < ActiveRecord::Base
 
   before_create :create_image_file
   before_update :update_image_file
+  before_destroy :destroy_image_file
 
   def upload_file_ext white_list
     white_list.each do |ext|
@@ -36,6 +37,13 @@ class Maxim < ActiveRecord::Base
   def update_image_file
     delete_img_path = "#{get_upload_path}#{self.img_path}"
     upload_file
+    File.delete(delete_img_path)
+  rescue
+    raise
+  end
+
+  def destroy_image_file
+    delete_img_path = "#{get_upload_path}#{self.img_path}"
     File.delete(delete_img_path)
   rescue
     raise
